@@ -3,8 +3,10 @@ namespace Slim\Extras;
 
 class Environment extends \Slim\Environment
 {
-    function __construct()
+    function __construct($settings = null)
     {
+        parent::__construct($settings);
+
         if (PHP_SAPI == 'cli') {
 
             $argv = $GLOBALS['argv'];
